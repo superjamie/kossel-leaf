@@ -19,12 +19,14 @@ metric_thick_clearance = 0.25;
 metric_round_clearance = 0.25;
 
 // metric screw clearance holes
+m2c   = 2.4;
 m2_5c = 2.9;
 m3c   = 3.3;
 m4c   = 4.3;
 m5c   = 5.3;
 
 // metric screw socket cap diameter
+m2d   = 4.0 + metric_round_clearance;
 m2_5d = 4.5 + metric_round_clearance;
 m3d   = 5.5 + metric_round_clearance;
 m4d   = 7.0 + metric_round_clearance;

@@ -32,18 +32,18 @@ module omron_endstop_holder() {
                     // radius
                     translate([extrusion+0.25,endstop_o_st,0]) cylinder(r=endstop_o_st,h=endstop_o_ht);
                     // get rid of half
-                    translate([extrusion+0.25-endstop_o_st,0,0]) cube([endstop_o_st,endstop_o_st*2,endstop_o_ht]);
+                    translate([extrusion+0.25-endstop_o_st,0,0]) cube([endstop_o_st+0.25,endstop_o_st*2,endstop_o_ht]);
                 }
             }
         }
 
         // switch screw holes
-        translate([5.3,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2_5c,h=endstop_o_th+e);
-        translate([5.3+9.5,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2_5c,h=endstop_o_th+e);
+        translate([5.3,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2c,h=endstop_o_th+e);
+        translate([5.3+9.5,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2c,h=endstop_o_th+e);
         
         // switch screw head
-        translate([5.3,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2_5d,h=m2_5k+e);
-        translate([5.3+9.5,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2_5d,h=m2_5k+e);
+        translate([5.3,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2d,h=m2_5k+e);
+        translate([5.3+9.5,endstop_o_th+e/2,endstop_o_ht/2]) rotate([90,0,0]) cylinder_outer(d=m2d,h=m2_5k+e);
 
         // extrusion screw
         translate([50,endstop_o_th+(extrusion/2),endstop_o_ht/2]) rotate([-90,0,90]) cylinder_outer(h=100,d=m5c);
@@ -57,6 +57,8 @@ module omron_endstop_holder() {
 }
 
 omron_endstop_holder();
+
+translate([-10,0,-10]) %cube([20,20,20]);
 
 translate([0,-5.8,endstop_o_ht/2]) rotate([90,0,0]) %omron();
 
